@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Medewerker index{% endblock %}
+
+{% block body %}
+    <h1>Medewerker index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Naam</th>
+                <th>Achternaam</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for medewerker in medewerkers %}
+            <tr>
+                <td>{{ medewerker.id }}</td>
+                <td>{{ medewerker.naam }}</td>
+                <td>{{ medewerker.achternaam }}</td>
+                <td>
+                    <a href="{{ path('medewerker_show', {'id': medewerker.id}) }}">show</a>
+                    <a href="{{ path('medewerker_edit', {'id': medewerker.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('medewerker_new') }}">Create new</a>
+{% endblock %}

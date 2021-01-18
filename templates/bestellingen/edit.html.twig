@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Bestellingen{% endblock %}
+
+{% block body %}
+    <h1>Edit Bestellingen</h1>
+
+    {{ include('bestellingen/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('bestellingen_index') }}">back to list</a>
+
+    {{ include('bestellingen/_delete_form.html.twig') }}
+{% endblock %}

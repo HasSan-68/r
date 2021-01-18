@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bon index{% endblock %}
+
+{% block body %}
+    <h1>Bon index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Datum</th>
+                <th>Medewerker</th>
+                <th>Klant</th>
+                <th>Bestellingen</th>
+                <th>Totaal_bedrag</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bon in bons %}
+            <tr>
+                <td>{{ bon.id }}</td>
+                <td>{{ bon.datum ? bon.datum|date('Y-m-d') : '' }}</td>
+                <td>{{ bon.mederwerkerid }}</td>
+                <td>{{ bon.klantid }}</td>
+                <td>{{ bon.bestellingid }}</td>
+                <td>{{ bon.totaalBedrag }}</td>
+
+                <td>
+                    <a href="{{ path('bon_show', {'id': bon.id}) }}">show</a>
+                    <a href="{{ path('bon_pdf', {'id': bon.id}) }}">PDF Download</a>
+                    <a href="{{ path('bon_edit', {'id': bon.id}) }}">edit</a>
+                <a href="{{ path('bon_delete', {'id': bon.id}) }}">Remove</a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('bon_new') }}">Create new</a>
+{% endblock %}

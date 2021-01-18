@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bon{% endblock %}
+
+{% block body %}
+    <h1>Bon</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bon.id }}</td>
+            </tr>
+            <tr>
+                <th>Datum</th>
+                <td>{{ bon.datum ? bon.datum|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Medewerker_Naam</th>
+                <td>{{ bon.mederwerkerid }}</td>
+            </tr>
+            <tr>
+                <th>Klant_Naam</th>
+                <td>{{ bon.klantid }}</td>
+            </tr>
+            <tr>
+                <th>Bestellingen</th>
+                <td>{{ bon.bestellingid }}</td>
+            </tr>
+
+            <tr>
+                <th>Totaal_bedrag</th>
+                <td>{{ bon.totaalBedrag }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+{% endblock %}

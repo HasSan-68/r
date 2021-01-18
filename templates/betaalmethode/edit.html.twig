@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Betaalmethode{% endblock %}
+
+{% block body %}
+    <h1>Edit Betaalmethode</h1>
+
+    {{ include('betaalmethode/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('betaalmethode_index') }}">back to list</a>
+
+    {{ include('betaalmethode/_delete_form.html.twig') }}
+{% endblock %}

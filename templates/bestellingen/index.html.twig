@@ -29,6 +29,7 @@
                 <td>{{ bestellingen.datum ? bestellingen.datum|date('Y-m-d') : '' }}</td>
                 <td>
                     <a href="{{ path('bestellingen_show', {'id': bestellingen.id}) }}">show</a>
+                    <a href="{{ path('bestellingen_pdf', {'id': bestellingen.id}) }}">PDF Download</a>
                     <a href="{{ path('bestellingen_edit', {'id': bestellingen.id}) }}">edit</a>
 
                 </td>

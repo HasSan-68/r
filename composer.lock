@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f124b75f20da32efb9b79c734e4854a",
+    "content-hash": "7169d1b7ca5b195d9819d71d1d6bdd10",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1309,16 +1309,16 @@
         },
         {
             "name": "friendsofphp/proxy-manager-lts",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/proxy-manager-lts.git",
-                "reference": "4a66e4e0d3279d3bb3722963b4294331fabe15bc"
+                "reference": "121af47c9aee9c03031bdeca3fac0540f59aa5c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/proxy-manager-lts/zipball/4a66e4e0d3279d3bb3722963b4294331fabe15bc",
-                "reference": "4a66e4e0d3279d3bb3722963b4294331fabe15bc",
+                "url": "https://api.github.com/repos/FriendsOfPHP/proxy-manager-lts/zipball/121af47c9aee9c03031bdeca3fac0540f59aa5c3",
+                "reference": "121af47c9aee9c03031bdeca3fac0540f59aa5c3",
                 "shasum": ""
             },
             "require": {
@@ -1373,7 +1373,7 @@
                 "proxy pattern",
                 "service proxies"
             ],
-            "time": "2021-01-04T11:21:26+00:00"
+            "time": "2021-01-14T21:52:44+00:00"
         },
         {
             "name": "laminas/laminas-code",
@@ -6122,47 +6122,41 @@
         },
         {
             "name": "twig/extra-bundle",
-            "version": "v3.2.1",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/twig-extra-bundle.git",
-                "reference": "07c94c7dcfe7e49abd45d4083ca5544a34969714"
+                "reference": "a7c5799cf742ab0827f5d32df37528ee8bf5a233"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/twig-extra-bundle/zipball/07c94c7dcfe7e49abd45d4083ca5544a34969714",
-                "reference": "07c94c7dcfe7e49abd45d4083ca5544a34969714",
+                "url": "https://api.github.com/repos/twigphp/twig-extra-bundle/zipball/a7c5799cf742ab0827f5d32df37528ee8bf5a233",
+                "reference": "a7c5799cf742ab0827f5d32df37528ee8bf5a233",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1.3|^8.0",
                 "symfony/framework-bundle": "^4.3|^5.0",
                 "symfony/twig-bundle": "^4.3|^5.0",
-                "twig/twig": "^3.2"
+                "twig/twig": "^2.4|^3.0"
             },
             "require-dev": {
-                "symfony/phpunit-bridge": "^4.4.9|^5.0.9",
-                "twig/cache-extra": "^3.0",
                 "twig/cssinliner-extra": "^2.12|^3.0",
                 "twig/html-extra": "^2.12|^3.0",
                 "twig/inky-extra": "^2.12|^3.0",
                 "twig/intl-extra": "^2.12|^3.0",
-                "twig/markdown-extra": "^2.12|^3.0",
-                "twig/string-extra": "^2.12|^3.0"
+                "twig/markdown-extra": "^2.12|^3.0"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Twig\\Extra\\TwigExtraBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
+                    "Twig\\Extra\\TwigExtraBundle\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -6183,20 +6177,76 @@
                 "extra",
                 "twig"
             ],
-            "time": "2021-01-05T15:24:51+00:00"
+            "time": "2020-05-21T09:56:39+00:00"
         },
         {
-            "name": "twig/twig",
+            "name": "twig/intl-extra",
             "version": "v3.2.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twigphp/Twig.git",
-                "reference": "f795ca686d38530045859b0350b5352f7d63447d"
+                "url": "https://github.com/twigphp/intl-extra.git",
+                "reference": "919e8f945c30bd3efeb6a4d79722cda538116658"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/f795ca686d38530045859b0350b5352f7d63447d",
-                "reference": "f795ca686d38530045859b0350b5352f7d63447d",
+                "url": "https://api.github.com/repos/twigphp/intl-extra/zipball/919e8f945c30bd3efeb6a4d79722cda538116658",
+                "reference": "919e8f945c30bd3efeb6a4d79722cda538116658",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "symfony/intl": "^4.3|^5.0",
+                "twig/twig": "^2.4|^3.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^4.4.9|^5.0.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Twig\\Extra\\Intl\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A Twig extension for Intl",
+            "homepage": "https://twig.symfony.com",
+            "keywords": [
+                "intl",
+                "twig"
+            ],
+            "time": "2021-01-01T14:58:18+00:00"
+        },
+        {
+            "name": "twig/twig",
+            "version": "v2.14.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "8bc568d460d88b25c00c046256ec14a787ea60d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/8bc568d460d88b25c00c046256ec14a787ea60d9",
+                "reference": "8bc568d460d88b25c00c046256ec14a787ea60d9",
                 "shasum": ""
             },
             "require": {
@@ -6211,10 +6261,13 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "2.14-dev"
                 }
             },
             "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                },
                 "psr-4": {
                     "Twig\\": "src/"
                 }
@@ -6245,7 +6298,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2021-01-05T15:40:36+00:00"
+            "time": "2021-01-05T15:34:33+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -6572,16 +6625,16 @@
         },
         {
             "name": "symfony/maker-bundle",
-            "version": "1.27.0",
+            "version": "v1.28.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/maker-bundle.git",
-                "reference": "a47408fa6e39034a5abe324a46f4e6733266267a"
+                "reference": "6f4d27a68c92179c124f5331a27e32d197c9bd59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/a47408fa6e39034a5abe324a46f4e6733266267a",
-                "reference": "a47408fa6e39034a5abe324a46f4e6733266267a",
+                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/6f4d27a68c92179c124f5331a27e32d197c9bd59",
+                "reference": "6f4d27a68c92179c124f5331a27e32d197c9bd59",
                 "shasum": ""
             },
             "require": {
@@ -6638,7 +6691,7 @@
                 "scaffold",
                 "scaffolding"
             ],
-            "time": "2021-01-08T18:14:10+00:00"
+            "time": "2021-01-15T18:19:20+00:00"
         },
         {
             "name": "symfony/phpunit-bridge",

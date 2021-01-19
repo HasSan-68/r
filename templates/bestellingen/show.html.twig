@@ -25,6 +25,9 @@
             </tr>
             <tr>
                 <th>Datum</th>
+                {% set bestellingtotaal = bestellingen.aantal * bestellingen.prijs  %}
+                <td>{{ bestellingtotaal|format_number({fraction_digit: 2}) }} }}</td>
+
                 <td>{{ bestellingen.datum ? bestellingen.datum|date('Y-m-d') : '' }}</td>
             </tr>
         </tbody>

@@ -36,15 +36,23 @@ class BestellingenRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?Bestellingen
+        public function findbyDate($value)
     {
         return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
+            ->andWhere('b.datum >= :val')
             ->setParameter('val', $value)
             ->getQuery()
-            ->getOneOrNullResult()
+            ->getResult()
         ;
     }
-    */
+        public function getTotalPrice()
+    {
+        return $this->createQueryBuilder('b')
+            ->andWhere('b.datum >= :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 }

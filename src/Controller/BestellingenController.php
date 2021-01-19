@@ -16,14 +16,25 @@ use Symfony\Component\Routing\Annotation\Route;
 class BestellingenController extends AbstractController
 {
     /**
-     * @Route("/", name="bestellingen_index", methods={"GET"})
+     * @Route("/{days}", name="bestellingen_index", methods={"GET"},  requirements={"id":"\d+"})
      */
-    public function index(BestellingenRepository $bestellingenRepository): Response
+    public function index(BestellingenRepository $bestellingenRepository, $days = 0): Response
     {
+        if(isset($days) && $days >= 1)
+        {
+            $lastdate = date('Y-m-d', strtotime("- ".$days." days"));
+            return $this->render('bestellingen/index.html.twig', [
+                'bestellingens' => $bestellingenRepository->findbyDate($lastdate)
+            ]);
+        }
+        else{
         return $this->render('bestellingen/index.html.twig', [
             'bestellingens' => $bestellingenRepository->findAll(),
         ]);
+        }
     }
+
+
 
     /**
      * @Route("/new", name="bestellingen_new", methods={"GET","POST"})

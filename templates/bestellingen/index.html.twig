@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% set totaal = 0 %}
 
 {% block title %}Bestellingen index{% endblock %}
 
@@ -18,6 +19,8 @@
         </thead>
         <tbody>
         {% for bestellingen in bestellingens %}
+            {% set totaal =  totaal + bestellingen.prijs %}
+
             <tr>
                 <td>{{ bestellingen.id }}</td>
                 <td>{{ bestellingen.voorgerecht }}</td>
@@ -35,6 +38,15 @@
                 <td colspan="6">no records found</td>
             </tr>
         {% endfor %}
+
+        <tr>
+            <td>Totaal:</td>
+            <td></td>
+            <td></td>
+            <td>{{ totaal }}</td>
+            <td></td>
+            <td></td>
+        </tr>
         </tbody>
     </table>
 

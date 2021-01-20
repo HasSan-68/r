@@ -67,7 +67,39 @@ class BonController extends AbstractController
 
         ob_end_clean();
         // Output the generated PDF to Browser (force download)
-        $dompdf->stream("bon.pdf", [
+        $dompdf->stream("bon-".$bon->getId().".pdf", [
+            "Attachment" => true
+        ]);
+
+        exit;
+    }
+
+    /**
+     * @Route("/bon/verzamelen", name="bon_verzamelen", methods={"GET"})
+     */
+    public function Verzamelen(BonRepository $bonRepository): Response{
+        $pdfOptions = new Options();
+        $pdfOptions->set('defaultFont', 'Arial');
+
+        // Instantiate Dompdf with our options
+        $dompdf = new Dompdf($pdfOptions);
+
+        // Retrieve the HTML generated in our twig file
+        $html = $this->renderView('bon/verzamelen.html.twig', [
+            'bons' => $bonRepository->findAll()
+        ]);
+        // Load HTML to Dompdf
+        $dompdf->loadHtml($html);
+
+        // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
+        $dompdf->setPaper('A4', 'portrait');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        ob_end_clean();
+        // Output the generated PDF to Browser (force download)
+        $dompdf->stream("bonVerzamelen.pdf", [
             "Attachment" => true
         ]);
 

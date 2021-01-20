@@ -36,6 +36,7 @@ class BestellingenController extends AbstractController
         ]);
         }
     }
+
     /**
      * @Route("/pdf/{id}", name="bestellingen_pdf", methods={"GET"})
      */
@@ -67,6 +68,7 @@ class BestellingenController extends AbstractController
 
         exit;
     }
+
 
 
     /**

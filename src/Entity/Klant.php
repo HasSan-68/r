@@ -187,6 +187,6 @@ class Klant
         return $this;
     }
     public function __toString() {
-        return $this->getNaam();
+        return $this->getNaam() .' '. $this->getAchternaam() ;
     }
 }

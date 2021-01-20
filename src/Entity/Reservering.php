@@ -5,8 +5,16 @@ namespace App\Entity;
 use App\Repository\ReserveringRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 /**
  * @ORM\Entity(repositoryClass=ReserveringRepository::class)
+ * @UniqueEntity(
+ *     fields={"datum", "status"},
+ *     errorPath="index",
+ *     message="This datum and hours are already in use on that host."
+ * )
+ * source: https://symfony.com/doc/current/reference/constraints/UniqueEntity.html#fields
  */
 class Reservering
 {

@@ -20,7 +20,7 @@
         <tbody>
         {% for bestellingen in bestellingens %}
             {% set bestellingtotaal = bestelling.aantal * bestelling.prijs  %}
-            {% set totaal =  totaal + bestellingen.prijs |format_number({fraction_digit: 4}) }}%}
+            {% set totaal =  totaal + bestellingen.prijs |format_number({fraction_digit: 4}) }%}
 
             <tr>
                 <td>{{ bestellingen.id }}</td>

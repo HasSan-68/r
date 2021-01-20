@@ -22,7 +22,7 @@ ReserveringController extends AbstractController
     public function index(ReserveringRepository $reserveringRepository): Response
     {
         return $this->render('reservering/index.html.twig', [
-            'Reserverings' => $reserveringRepository->findAll(),
+            'reserverings' => $reserveringRepository->findAll(),
         ]);
     }
 

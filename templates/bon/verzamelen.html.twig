@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1>Bon</h1>
-
+    {% for bon in bons %}
     <table class="table">
         <tbody>
             <tr>
@@ -34,8 +34,8 @@
             </tr>
         </tbody>
     </table>
-
-
+        <hr>
+    {% endfor %}
 
 
 {% endblock %}

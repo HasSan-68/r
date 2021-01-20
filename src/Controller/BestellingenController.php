@@ -19,7 +19,7 @@ use Dompdf\Options;
 class BestellingenController extends AbstractController
 {
     /**
-     * @Route("/{days}", name="bestellingen_index", methods={"GET"},  requirements={"id":"\d+"})
+     * @Route("/{days}", name="bestellingen_index", methods={"GET"},  requirements={"days":"\d+"})
      */
     public function index(BestellingenRepository $bestellingenRepository, $days = 0): Response
     {

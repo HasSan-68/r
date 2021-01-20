@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Bestellingen;
 use App\Entity\Bon;
+use App\Entity\Klant;
+
 use App\Form\BonType;
 use App\Repository\BonRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,6 +15,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
+
+use PDFMerger;
 
 /**
  * @Route("/bon")
@@ -35,12 +40,21 @@ class BonController extends AbstractController
         $pdfOptions = new Options();
         $pdfOptions->set('defaultFont', 'Arial');
 
+        $klant = $this->getDoctrine()->getRepository(Klant::class)->find($bon->getKlantId());
+        $bestellingen = $this->getDoctrine()->getRepository(Bestellingen::class)->find($bon->getBestellingId());
+
+
         // Instantiate Dompdf with our options
         $dompdf = new Dompdf($pdfOptions);
+        $pdf = new PDFMerger();
+
+
 
         // Retrieve the HTML generated in our twig file
         $html = $this->renderView('bon/show.html.twig', [
             'bon' => $bon,
+            'klant'=> $klant,
+            'bestellingen' => $bestellingen,
         ]);
         // Load HTML to Dompdf
         $dompdf->loadHtml($html);
@@ -59,6 +73,9 @@ class BonController extends AbstractController
 
         exit;
     }
+
+
+
     /**
      * @Route("/new", name="bon_new", methods={"GET","POST"})
      */
@@ -126,3 +143,4 @@ class BonController extends AbstractController
         return $this->redirectToRoute('bon_index');
     }
 }
+
